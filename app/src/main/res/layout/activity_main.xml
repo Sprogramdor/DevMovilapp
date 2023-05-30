@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:background="@color/teal_700"
+        android:gravity="top"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="GRUPO 2"
+        app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:titleTextColor="@color/white"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="420dp"
+        android:layout_height="662dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.0">
+
+        <ImageView
+            android:id="@+id/imageView5"
+            android:layout_width="350dp"
+            android:layout_height="237dp"
+            android:contentDescription="TODO"
+            android:src="@drawable/_8880310_1528930290451988_6380696670781424354_o" />
+
+        <EditText
+            android:id="@+id/txt_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Usuario"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/txt_pass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:ems="10"
+            android:hint="Contraseña"
+            android:inputType="textPassword" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_aceptar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/design_default_color_secondary"
+                    android:onClick="botonAceptar"
+                    android:text="Aceptar"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:iconTint="@color/design_default_color_surface" />
+
+                <Button
+                    android:id="@+id/btn_salir"
+                    android:layout_width="117dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/salir"
+                    android:onClick="botonCancelar"
+                    android:text="Salir"
+                    android:textAlignment="gravity"
+                    android:textColor="#F1F1F1"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:rippleColor="@color/design_default_color_error" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btn_cuenta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/teal_100"
+                android:onClick="botonCuenta"
+                android:text="Crear Cuenta" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

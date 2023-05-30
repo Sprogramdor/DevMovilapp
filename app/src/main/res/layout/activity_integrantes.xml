@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".integrantes">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txt_welcome"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/teal_700"
+            android:backgroundTint="@color/teal_700"
+            android:gravity="top"
+            android:text="Acerca de"
+            android:textAlignment="center"
+            android:textColor="#FFFFFF"
+            android:textSize="20sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tabout"
+                android:layout_width="wrap_content"
+                android:layout_height="73dp"
+                android:layout_gravity="center"
+                android:text="Grupo 2 "
+                android:textSize="34sp" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="373dp"
+                android:layout_height="327dp"
+                app:srcCompat="@drawable/captura_de_pantalla_2023_05_20_120507" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/g"
+                android:layout_width="match_parent"
+                android:layout_height="51dp"
+                android:layout_gravity="center">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center|center_vertical"
+                    android:text="Integrantes"
+                    android:textSize="20sp" />
+            </androidx.cardview.widget.CardView>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="114dp"
+                android:layout_height="wrap_content"
+                android:text="ACOSTA JESUS" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="GONZÁLEZ EMILY" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="RAMOS FABRIZIO" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

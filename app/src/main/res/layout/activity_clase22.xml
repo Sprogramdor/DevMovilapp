@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Clase_22">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="16dp">
+
+        <TextView
+            android:id="@+id/txt_titulo"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/design_default_color_secondary_variant"
+            android:gravity="center_horizontal|center_vertical"
+            android:paddingBottom="@dimen/cardview_default_elevation"
+            android:text="Formulario de registro"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:paddingTop="@android:dimen/app_icon_size">
+
+            <EditText
+                android:id="@+id/txt_cedula"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Cedula"
+                android:inputType="number"
+                android:maxLength="10" />
+
+            <EditText
+                android:id="@+id/txt_nombre"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Nombres"
+                android:inputType="text|textPersonName" />
+
+            <EditText
+                android:id="@+id/txt_apellidos"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Apellidos"
+                android:inputType="text|textPersonName" />
+
+            <EditText
+                android:id="@+id/txt_edad"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:hint="Edad"
+                android:inputType="number"
+                android:maxLength="3" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="163dp"
+                    android:layout_height="match_parent"
+                    android:text="Nacionalidad:"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/spn_nacionalidad"
+                    android:layout_width="170dp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="16dp">
+
+                <TextView
+                    android:id="@+id/txt_nacionalidad"
+                    android:layout_width="115dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Género:"
+                    android:textSize="20sp" />
+
+                <Spinner
+                    android:id="@+id/spn_genero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/txt_est_civil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="Estado Civil"
+                android:textSize="20sp" />
+
+            <RadioGroup
+                android:id="@+id/rg_civil"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/rbt_casado"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Casado" />
+
+                <RadioButton
+                    android:id="@+id/rbt_union"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Unión Libre" />
+
+                <RadioButton
+                    android:id="@+id/rbt_soltero"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:checked="false"
+                    android:onClick="onRadioButtonClicked"
+                    android:text="Soltero" />
+
+            </RadioGroup>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+
+                <EditText
+                    android:id="@+id/dtm_fecha_nacimiento"
+                    android:layout_width="227dp"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:hint="Fecha de Nacimiento"
+                    android:inputType="date" />
+
+                <ImageButton
+                    android:id="@+id/imageButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="33dp"
+                    android:background="@color/teal_200"
+                    android:cropToPadding="false"
+                    android:onClick="mostrarCalendaario"
+                    android:padding="1dp"
+                    android:scaleType="center"
+                    app:srcCompat="@android:drawable/ic_menu_my_calendar" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingTop="16dp">
+
+                <Button
+                    android:id="@+id/btn_registrar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/teal_200"
+                    android:onClick="botonregistrar"
+                    android:text="Registrar" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btn_borrar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="@color/teal_100"
+                        android:onClick="botonborrar"
+                        android:text="Borrar" />
+
+                    <Button
+                        android:id="@+id/btn_cancelar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:backgroundTint="#E91E63"
+                        android:onClick="botoncancelar"
+                        android:text="Cancelar" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
