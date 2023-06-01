@@ -78,6 +78,14 @@
                 android:layout_height="wrap_content"
                 android:text="RAMOS FABRIZIO" />
 
+            <Button
+                android:id="@+id/btnBorrarDatos"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/salir"
+                android:onClick="borrarDatosOnClick"
+                android:text="Eliminar datos" />
+
         </LinearLayout>
     </LinearLayout>
 

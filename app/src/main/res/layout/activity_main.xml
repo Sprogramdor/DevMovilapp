@@ -56,6 +56,12 @@
             android:hint="Contraseña"
             android:inputType="textPassword" />
 
+        <CheckBox
+            android:id="@+id/cbMantenerSesion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mantener sesion iniciada" />
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

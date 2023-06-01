@@ -3,13 +3,17 @@ package com.example.ejercicios_entre_activity;
 import androidx.appcompat.app.AppCompatActivity;
 
 import androidx.appcompat.widget.Toolbar;
+
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -19,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
 
     EditText txt_usuario;
     EditText txt_clave;
+
+    CheckBox cbMantenerSesion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +36,8 @@ public class MainActivity extends AppCompatActivity {
     //acceder a los botones
         Button btn_aceptar = (Button)findViewById(R.id.btn_aceptar);
 
-
+        cbMantenerSesion = (CheckBox) findViewById(R.id.cbMantenerSesion);
+        cargarInformacion();
     }
 
 
@@ -67,6 +74,9 @@ public class MainActivity extends AppCompatActivity {
                 Intent call = new Intent(this, integrantes.class);
                 call.putExtra( "usuario",txt_usuario.getText().toString());
                 call.putExtra("clave",txt_clave.getText().toString());
+                if(cbMantenerSesion.isChecked() == true){
+                    guardarInformacion();
+                }
                 startActivity(call);
             } else {
                 Toast.makeText(v.getContext(), "Datos incorrectos", Toast.LENGTH_SHORT).show();
@@ -76,6 +86,32 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(v.getContext(), "hay un problema", Toast.LENGTH_SHORT).show();
         }
     }
+
+    public void cargarInformacion(){
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+        String usuario = preferences.getString("usuario", "" );
+        String clave = preferences.getString("clave", "");
+
+        if(!usuario.equals("") && !clave.equals("")){
+            Intent call = new Intent(this, integrantes.class);
+            call.putExtra( "usuario", usuario);
+            call.putExtra("clave", clave);
+            startActivity(call);
+        }
+    }
+
+    public void guardarInformacion(){
+        SharedPreferences preferences = getSharedPreferences("credenciales", Context.MODE_PRIVATE);
+
+        String usuario = txt_usuario.getText().toString().trim();
+        String clave = txt_clave.getText().toString().trim();
+
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("usuario", usuario);
+        editor.putString("clave", clave);
+        editor.commit();
+    }
+
     public static boolean userPass (String[] usuario, String[] contraseña, String elemento, String elemento2) {
         if (usuario.length != contraseña.length) {
             throw new IllegalArgumentException("Los arreglos no tienen la misma longitud");
